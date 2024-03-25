@@ -1,0 +1,707 @@
+%-------------------------
+% Resume in Latex
+% Author : Puneet Gautam, puneet.gautam0206@gmail.com, punitrajgautam@uiit.ac.in
+% License : MIT
+%MIT License
+
+%Copyright (c) 2023 Puneet Gautam
+
+%Permission is hereby granted, free of charge, to any person obtaining a copy
+%of this software and associated documentation files (the "Software"), to deal
+%in the Software without restriction, including without limitation the rights
+%to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%copies of the Software, and to permit persons to whom the Software is
+%furnished to do so, subject to the following conditions:
+
+%The above copyright notice and this permission notice shall be included in all
+%copies or substantial portions of the Software.
+
+%THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+%SOFTWARE.
+%------------------------
+
+%---- Required Packages and Functions ----
+
+\documentclass[a4paper,10pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=0.6cm, top=0.5cm, right=0.6cm, bottom=0.5cm}
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={}
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+	\vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+	\item{
+		\textbf{#1}{:\hspace{0.5mm}#2 \vspace{-0.5mm}}
+	}
+}
+
+\newcommand{\resumePOR}[3]{
+	\vspace{0.5mm}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1},\hspace{0.3mm}#2 & \textit{\small{#3}} 
+	\end{tabular*}
+	\vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+	\vspace{0.5mm}\item
+	\begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & \textit{\footnotesize{#4}} \\
+		\textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+	\end{tabular*}
+	\vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+	\vspace{0.5mm}\item
+	\begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & \textit{\footnotesize{#3}} \\
+		\footnotesize{\textit{#2}} & \footnotesize{#4}
+	\end{tabular*}
+	\vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+% \renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+	\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+		\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+				
+				\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+			\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+		\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+	\vspace{2mm}
+	\begin{tcolorbox}
+		\textbf{\large #1}
+	\end{tcolorbox}
+	\vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{Max Base (Seyyed Ali Mohammadiyeh)} % Your Name
+\newcommand{\course}{Senior Software Engineer - Developer} % Your Course
+\newcommand{\roll}{Software Engineer} % Your Roll No.
+\newcommand{\phone}{+44 20 8638 5250}%+98 913 495 0787, +46 762704443} % Your Phone Number
+\newcommand{\emaila}{maxbasecode@gmail.com} %Email 1
+\newcommand{\emailb}{maxbasecode@gmail.com} %Email 2
+\newcommand{\github}{BaseMax} %Github
+\newcommand{\website}{https://maxbase.org} %Website
+\newcommand{\linkedin}{maxbase} %linkedin
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+%----------HEADING-----------------
+
+%\parbox{2.35cm}{%
+	%\includegraphics[width=2cm,clip]{GGSIU_logo.png}
+	%}\parbox{\dimexpr\linewidth-2.8cm\relax}
+%{
+	\begin{tabularx}{\linewidth}{L r}
+		\textbf{\LARGE \name} & \phone\\
+		
+		\course &  \href{mailto:\emailb}{\emailb}\\
+		{Residency in Estonia (Sep 2023 - Sep 2028) and Iran} &  \href{https://github.com/\github}{GitHub} \\ %$|$ \href{\website}{Website}\\
+		{Location: Linköping, Sweden} & \href{https://www.linkedin.com/in/\linkedin/}{LinkedIn}
+	\end{tabularx}
+	%}
+
+\vspace{-2mm}
+
+
+%-------------SUMMARY-----------------
+\iffalse
+\section{\textbf{Summary}}
+compiler programming developer developing test
+go golang go language c# .net asp.net dotnet
+typescript javascript react reactjs
+js ts
+sql
+expressjs nestjs
+\fi
+%-----------EDUCATION-----------------
+
+\section{\textbf{Technical Skills}}
+
+With over 15 years of programming experience and a demonstrable background in mathematics, I've honed my skills in backend engineering, front-end developing, system architecture, and open-source development. I excel in designing scalable solutions, optimizing performance, and crafting intuitive user experiences. My passion for problem-solving ability and dedication to continuous learning drive my contributions to projects ranging from e-commerce platforms to system programs. As a flexible and self-taught professional, I thrive on challenges and am eager to leverage my expertise to drive impactful change in a collaborative environment.\\
+\vspace{6pt}
+\textbf{Programming Languages}: Bash, C, C\#, C++, CSS3, D, Go, GAP System, HTML 5, Java, JavaScript, PHP 8.3, Python 3.12, Ruby, SageMath, TypeScript (sorted alphabetically)\\
+\textbf{Tools and Frameworks}: CI/CD, Git, GitHub, Gitlab, Bitbucket, GitHub Actions, Pre-Commit, .NET Core, .NET Framework, CakePHP, Codeigniter 3-4, ExpressJS, GORM, XORM, Ginkgo, GoMock, Gin, Echo, Beego, gRPC, Colly, WebSocket, Socket.IO, Auth0, JWT, Protobuf, Laravel 11, NestJS, NextJS, NuxtJS, ReactJS, React Native, Tailwind CSS, Xamarin, Vite, WebPack, Laravel Horizon, Serilog, RabbitMQ, Swagger, Postman, Hangfire\\
+\textbf{Databases}: Redis, PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, ClickHouse, SQLite, CockroachDB, InfluxDB, Neo4j, Cassandra\\
+\textbf{CMSs}: Wordpress, Jommla, Umbraco, Sitecore, WHMCS, DataLife Engine, Drupal\\ % Kentico
+\textbf{Operating Systems}: GNU/Linux (Arch, Ubuntu, Fedora, Centos), macOS, Windows, BSD (FreeBSD)\\
+\textbf{Cloud}: AWS (EC2, 53, SES, ECS, EKS, S3, RDS, Lambda, VPC , Amplify), Google Cloud, Docker, Kubernetes, Azure\\
+
+%-----------EXPERIENCE-----------------
+\section{\textbf{Experiences}}
+\resumeSubHeadingListStart
+
+\vspace{-1mm}
+\resumeSubheading
+{GitHub}{Remote}
+{Open-Source Maintainer}{Feb 2018 - Present}
+\resumeItemListStart
+As an Open-Source Maintainer at GitHub, I spearheaded efforts to reactivate GitHub access for Iranian developers, overcoming regulatory challenges and ensuring equitable access to the platform. Additionally, I played a pivotal role in the development and launch of OpenSourceFriday.com, a platform encouraging global collaboration and contribution to open-source projects. I significantly expanded the platform's reach by adding new translation languages, fostering inclusivity and accessibility for diverse developer communities worldwide. Collaborating closely with GitHub's leadership team, including the CEO, I provided invaluable insights and feedback to shape the platform's future direction, contributing to its continued success. With a portfolio of over 1,000 projects and repositories, I've earned recognition as one of GitHub's top ten active developers.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Inisev Ltd.}{Malta - Remote}
+{Team Lead - Senior Software Engineer}{Feb 2023 - Present}
+\resumeItemListStart
+I lead a dynamic team in the development of cutting-edge software solutions. My role involves strategic planning, hands-on coding, and mentoring team members. Embracing the challenges of a hybrid work environment, I ensure effective communication and collaboration, contributing to the success of projects.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Shannon Airport}{Ireland - Remote}
+{Part-time C\# Back-End Developer}{July 2023 - Dec 2023}
+\resumeItemListStart
+Engaged in weekly meetings with airport teams and collaborated closely with content and marketing teams to understand project requirements and objectives. Communicated effectively with the engineering team to coordinate development efforts and ensure alignment with project goals. Worked on both front-end and back-end tasks, with a primary focus on backend development. Developed several modules for Umbraco CMS, leveraging C\#, to enhance the functionality and usability of the airport's website. Created custom C\# plugins for ASP.NET Core to address specific project requirements, including multi-language support. Operated within an agile methodology, participating in sprint planning, stand-ups, and retrospectives to drive project progress and ensure timely delivery. Implemented optimizations to improve page speed and user feedback on the airport's website, enhancing the overall user experience.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Nota Application Holdings Ltd}{Margate, England - Remote}
+{Software Engineer}{March 2023 - Feb 2024}
+\resumeItemListStart
+Collaborated with design team and co-founders to understand the purpose and objectives of startup projects. Develop ASP.net C\# back-end infrastructure, writing parts of microservices in Go and PHP 8.3. Utilized several AWS services for all back-end serving and server needs. Designed and developed a website using ReactJS with Next.js for server-side rendering (SSR) and created applications in React Native using TypeScript to support both iOS and Android platforms.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Morabaa Software Solutions}{Baghdad, Iraq - Hybrid}
+{.NET Core Developer - Senior Software Engineer}{Aug 2023 - Nov 2023}
+\resumeItemListStart
+I played a key part in designing and implementing robust software solutions. Working within a specialized domain, I utilized my proficiency in .NET Core development to address complex challenges. This experience not only sharpened my technical skills but also provided a valuable global perspective on software development.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{KMP Associates Ltd.}{London, England - Remote}
+{.NET - C\# Back-End Developer}{September 2023 - Jan 2024}
+\resumeItemListStart
+Contributed as a valuable member of the engineering team at KMP Associates Ltd., a prominent digital agency specializing in innovative digital solutions. Played a key role in developing C\# modules, including creating sitemap modules and addressing security vulnerabilities to ensure robustness and reliability of the projects. Implemented functionalities for loading templates and styles and developed administrative panels for various projects, enhancing usability and manageability. Adopted the Jira method of project management to efficiently track progress and coordinate tasks. Collaborated closely with frontend developers and quality assurance (QA) teams to ensure seamless integration and delivery of high-quality solutions.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Inisev Ltd.}{Switzerland - Remote}
+{Senior Software Engineer}{Feb 2023 - Present}
+\resumeItemListStart
+I spearheaded the design and implementation of a comprehensive software ecosystem comprising over 100 sub-microservices. Leading the development efforts, I focused on enabling the seamless delivery of over 10 million events and messages to users across various channels, including emails, social networks, and other platforms. Additionally, I contributed to the development of services catering to more than 1 million active users, effectively managing thousands of concurrent requests. Leveraging technologies such as Redis, ClickHouse, PostgreSQL, MySQL, Cassandra, and others, I ensured optimal performance and reliability across the system. Furthermore, I maintained and optimized queue systems to handle diverse tasks with varying priorities, enhancing the efficiency and scalability of our operations. Operating within a fully remote setup, I excelled in collaborating with distributed teams, fostering seamless communication, and driving technological excellence in alignment with Inisev's overarching mission.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Conquer Technology}{London, United Kingdom}
+{Tech Architect}{Feb 2023 - Dec 2023}
+\resumeItemListStart
+I am at the forefront of architectural decisions and technical strategy. My role involves shaping the technological landscape of projects, ensuring scalability, efficiency, and alignment with industry best practices. Collaborating closely with cross-functional teams, I leverage my expertise to design robust and innovative solutions. In this dynamic environment, I contribute to the evolution of Conquer Technology's technical vision, driving excellence in software architecture.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{MyLife Online Counselling Services Ltd}{United Kingdom - Remote}
+{Tech Architect}{July 2023 - October 2023}
+\resumeItemListStart
+Lead software engineer for the MyLife project at MyLife Online Counselling Services Ltd, responsible for shaping the technological landscape of the platform. \\
+Spearheaded the development of the WordPress website and addressed any issues or bugs that arose during the process. \\
+Undertook the migration of the entire PHP Laravel backend to the Go programming language, resulting in improved performance and scalability. \\
+Implemented optimizations to enhance the efficiency of the PostgreSQL database, including improving SQL queries and streamlining database operations. \\
+Oversaw and coordinated the efforts of Android and iOS developers in building native applications using Kotlin Multiplatform for Android and Swift for iOS. \\
+Led the development of a comprehensive web dashboard panel tailored for therapists, providing intuitive tools and functionalities. \\
+Orchestrated the integration of video and audio call capabilities into the platform, enabling seamless communication between therapists and clients across web, Android, and iOS platforms.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Totally Charged EV Limited}{Oldham, England}
+{Senior Front-End Engineer and Back-End Engineer - TypeScript}{Jan 2022 - Dec 2023}
+\resumeItemListStart
+{TypeScript, ReactJS, NextJS, NestJS, SSR, GraphQL, API, React Native}
+I specialize in crafting immersive user experiences using cutting-edge technologies. My toolkit includes TypeScript, ReactJS, Storybook, React Native, NestJS, NextJS, SSR, GraphQL, and API integration. I seamlessly blend remote collaboration with in-person engagement. I take pride in leveraging my expertise to create performant and visually stunning front-end solutions, contributing to Totally Charged's commitment to delivering top-notch user interfaces in the ever-evolving digital landscape.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{OT Group Limited}{Manchester, England - Remote}
+{Senior QA Engineer - Test Engineer}{Jan 2023 - July 2023}
+\resumeItemListStart
+I played a crucial role in enhancing the Smartpad platform's performance and user experience. Tasked with expanding the number of available SKUs to 1 million by mid-2023 and 1.5 million by end of 2023, I focused on addressing various user experience issues affecting the platform.\\
+I spearheaded the design and implementation of over 200 automated tests, end-to-end tests, unit tests, leveraging tools such as BlazeMeter, Selenium, and Apache JMeter. These tests covered different user stories and scenarios, including load testing, to ensure the platform's reliability and scalability.\\
+In addition to test automation, I conducted thorough reviews of the platform's source code to identify and address system bottlenecks contributing to slow page speeds. Collaborating closely with the engineering team and directors, I provided detailed research reports outlining findings and proposed solutions to optimize performance and user satisfaction.\\
+My efforts were instrumental in improving search functionality, search speed, search relevance, and overall system scalability. By exceeding performance objectives and implementing strategic resolutions, I contributed to enhancing the Smartpad platform's usability and driving business growth for OT Group Limited.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Toot.co}{United Kingdom}
+{Consultant and Engineer}{November 2022 - March 2023}
+\resumeItemListStart
+Consulted and engineered solutions to rectify several bugs in native Android and iOS applications, enhancing overall performance and user experience. \\
+Resolved issues within the Laravel backend, ensuring seamless functionality and improved system stability. \\
+Implemented a robust queue system to efficiently process background tasks, such as gathering location details and analytics for all movements, by integrating with third-party APIs like Google. \\
+Achieved a 40\% reduction in API calling costs through optimization strategies. \\
+Enhanced the speed of the queue system to handle over 2,000 active users simultaneously, ensuring smooth operation even during peak usage periods. \\
+Streamlined the process of generating movement analytics results, reducing the processing time from over 10 days to less than 2 minutes.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Domino's Pizza - UK Branch}{United Kingdom - Project}
+{Software Engineer}{May 2023 - July 2023}
+\resumeItemListStart
+Automated a WhatsApp account and integrated it into a robotic script.\\
+Developed functionality to convert voice messages into text using Python and Go language for further processing.\\
+Implemented analytics to analyze the tone of voice, detecting levels of anger and displeasure, and understanding the audience sentiment.\\
+Automatically responded to messages for Domino's Pizza using AI assistance.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Senior Front-End Engineer}{New York - Remote}
+{ReactJS - Front-End Developer}{Jul 2021 - Jan 2022}
+\resumeItemListStart
+I contributed to the development of cutting-edge user interfaces, elevating the company's digital presence. Working in a dynamic environment, I focused on creating responsive and visually appealing front-end components, seamlessly integrating with back-end systems.
+Developed a modular React component library, reducing development time for subsequent projects by 20%.\\
+Implemented state management using Redux, enhancing application performance and enabling efficient data flow.\\
+Collaborated with UX/UI designers to bring innovative design concepts to life, resulting in a 15\% increase in user engagement.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Panda Cloud EV Limited}{England, Manchester · Hybrid}
+{Senior Engineer (Front-End and Back-End)}{Jan 2023 - Nov 2023}
+\resumeItemListStart
+%{TypeScript, ReactJS, NextJS, SSR, NestJS, GraphQL, API, React Native, AWS, Linux, Bash, Go}
+My role encompassed both front-end and back-end responsibilities, focusing on developing and maintaining a range of charging solutions. I spearheaded efforts to enhance charger adapters, hardware code, and communication protocols with EV chargers, while also expanding support for multiple charger protocols. On the front-end, I played a crucial role in crafting immersive user experiences through ReactJS, NextJS, and SSR techniques. Simultaneously, I architected and developed back-end services using TypeScript, NestJS, GraphQL, Go Language, and various databases, ensuring the stability, scalability, and security of our systems. Additionally, I led the development of an admin panel for managing charging stations and customer data. Leveraging AWS services, including hosting and infrastructure management, I optimized our solutions for performance and reliability. My contributions extended to optimizing API performance using technologies like Go, alongside Linux administration and bash scripting. Overall, my multidisciplinary expertise in TypeScript, ReactJS, NextJS, NestJS, AWS, databases, and Linux played a pivotal role in driving the success of Panda Cloud's charging solutions.
+
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Scandinavian Transport}{Sweden · Hybrid}
+{Senior Full-Stack Developer}{Sep 2022 - Dec 2023}
+\resumeItemListStart
+Played a pivotal role in shaping the business from inception to fruition, actively engaging in customer outreach and issue resolution.\\
+Proficiently utilized AWS, Google Cloud, and other web services to optimize operations, ensuring scalable and reliable infrastructure.\\
+Led the development of comprehensive web and mobile applications, with a focus on map and location infrastructure, as well as driver and customer software, to facilitate seamless transportation services.\\
+Demonstrated expertise in a wide range of technologies including ES6, JavaScript, C\#, PHP, Go (Golang), CSS, Storybook, and React, ensuring efficient and effective web development practices.\\
+Successfully contributed to the administration of Linux systems, addressing associated challenges and ensuring smooth operation of the platform.\\
+Spearheaded the development efforts for iOS and Android applications, ensuring intuitive user experiences and high-performance functionality.\\
+Leveraged Qt C++ for efficient software development tasks, enhancing the robustness and performance of the application suite.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Asrez}{Kashan}
+{Chief Technology Officer}{Sep 2021 - Jan 2024}
+\resumeItemListStart
+I served as both CTO and project manager, leading a dynamic team of over 20 developers. I played a pivotal role in managing and nurturing the growth of our team, which fluctuated from 5 to over 40 developers at different stages.\\
+My responsibilities included overseeing the development of projects, providing guidance and mentorship to team members, and ensuring the successful execution of our technology initiatives.\\
+At times when team members were not sufficiently active, I took the initiative to start coding and write code myself to prepare projects on deadline. I believed in leading by example and actively contributed to project development when needed, rather than solely delegating tasks.\\
+My leadership approach emphasized the importance of providing support and assistance to team members when needed, fostering a collaborative and supportive work environment.\\	
+My expertise spans a wide range of technologies including Java, JSP, PostgreSQL, MariaDB, SQL, MongoDB, Go, ASP.net, C\#, PHP, Storybook, Figma, JavaScript, Git, VueJS, and ReactJS. I utilized these skills to drive innovation, streamline processes, and foster collaboration within the team.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Open Sauced}{Remote}
+{Open Source Contributor}{May 2022 - Present}
+\resumeItemListStart
+Participation as a community member in Open Sauced, engaging in events, and contributing to various open-source software projects.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{KhodroMarket}{Remote}
+{.Net Core Developer}{Nov 2022 - Aug 2023}
+\resumeItemListStart
+Played a pivotal role in revolutionizing KhodroMarket, the leading platform in the Iranian automotive industry, by designing and implementing a new template for the website.\\
+Developed a customized Content Management System (CMS) to streamline content management processes, utilizing C\#, ASP.NET, and .NET Core technologies.\\
+Implemented robust RESTful APIs to enhance the platform's functionality and facilitate seamless integration with external systems and services.\\
+Demonstrated proficiency in writing efficient C\# code and optimizing Microsoft SQL Server queries, resulting in significant improvements in the platform's speed and performance.\\
+Implemented advanced caching mechanisms to optimize the load time and enhance the overall user experience of the website.\\
+Thrived in a remote work environment, collaborating effectively with a diverse team of professionals to achieve project objectives.\\
+This experience not only honed my problem-solving skills but also kept me abreast of industry trends, enabling me to make a substantial impact in software development within the automotive sector.
+\resumeItemListEnd
+
+% \vspace{-1mm}
+% \resumeSubheading
+% {One Programming Language}{Location}
+% {Founder and Creator}{Jan 2016 - Present}
+
+\vspace{-1mm}
+\resumeSubheading
+{Mirese}{Iran}
+{Senior Back-End Engineer}{Jan 2022 - May 2022}
+\resumeItemListStart
+Designed and implemented the backend structure and framework, adhering to a suitable architecture tailored to our needs. \\
+Optimized database structures to enhance performance and efficiency. \\
+Developed a recommendation system to intelligently offer products to customers based on their preferences. \\
+Engineered solutions to handle thousands of daily requests efficiently, utilizing minimal server resources. \\
+Designed and implemented delivery systems to ensure seamless order fulfillment. \\
+Implemented caching mechanisms for data and search results, significantly improving page load speeds. \\
+Designed and deployed crawlers to gather data from various sources, processed text, and extracted pricing information. \\
+Developed APIs for seamless integration with third-party services and communication with multiple accounting software solutions. \\
+Architected a robust e-commerce system capable of handling over 20,000 products, with a remarkable page load speed of less than 1-2 seconds for all requests. \\
+Implemented a powerful and fast search engine to enable users to quickly find the products they need. \\
+Optimized and enhanced the database structures to improve overall system performance and scalability. \\
+Utilized most design patterns, principles of object-oriented programming (OOP), and followed the Model-View-Controller (MVC) architecture to ensure maintainability and extensibility of the codebase.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Takhfifan}{Tehran}
+{Senior Software Engineer}{Feb 2022 - Apr 2022}
+\resumeItemListStart
+Collaborated closely with the marketing team to align technical implementations with business objectives. Conducted thorough code reviews and delivered insightful feedback to the engineering team to uphold code quality and scalability. Fostered seamless communication among engineers, designers, and graphic artists, translating design concepts into robust web solutions. Spearheaded the design and development of captivating landing pages for special events, driving user engagement and conversion rates. Leveraged a versatile tech stack including TypeScript, JavaScript, ES6, CSS3, Flexbox, ReactJS, NextJS, SSR, and Tailwind CSS to craft immersive and responsive user experiences.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{University of Kashan}{Remote}
+{Software Engineer}{Mar 2020 - Mar 2022}
+\resumeItemListStart
+Directed all technical operations and initiatives, ensuring the seamless functioning of university servers and systems. Pioneered the development and deployment of a cutting-edge record conversion system, integrating Linux, FFMPEG, C\#, PHP, Node.js, and Python scripts within a microservices architecture. Engineered and launched comprehensive online training platforms, equipped with advanced features such as screen sharing, webcam support, and meeting recording capabilities, catering to over 10,000 students across diverse departments. Orchestrated numerous educational webinars and managed virtual classrooms, facilitating uninterrupted learning during the transition to virtual platforms amidst the COVID-19 pandemic.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Insly}{London, England}
+{WordPress Developer}{Feb 2021}
+\resumeItemListStart
+Contributed extensively to the development of new templates and user interfaces, driving enhancements to Insly's insurance software platform on WordPress. Innovated and implemented custom plugins, augmenting platform capabilities and optimizing web service delivery. Proactively maintained and managed plugins, ensuring seamless functionality and efficiency in shortcodes and hooks operation.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Insly}{Tallinn, Estonia}
+{Senior Software Engineer}{Jan 2021 - Feb 2021}
+\resumeItemListStart
+Collaborated closely with marketing and technical teams to translate ideas into tangible products, aligning with Insly's mission to provide innovative insurance software solutions.\\
+Developed simple and advanced ROI (Return on Investment) calculators to compute quotes and binding efficiency, addressing the specific needs of insurance brokers and agents.\\
+Took charge of implementing web service APIs, backend programming, database management, and frontend calculator development to optimize functionality and user experience.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{University of Kashan}{Online}
+{Research Assistant}{Dec 2019 - Dec 2023}
+\resumeItemListStart
+Conducted extensive research in various areas of mathematics, developing advanced algorithms and programs to address complex theoretical and practical challenges. Authored and co-authored over 8 books and contributed to 40 research papers published in both national and international conferences and journals. Collaborated closely with professors and industry experts on interdisciplinary research projects, leveraging expertise in mathematical theory and computational methods to solve real-world problems. Presented research findings at conferences, seminars, and workshops, contributing to academic discourse and fostering knowledge exchange within the scientific community. 
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Ombre Currency}{Remote}
+{Software Engineer}{Oct 2019 - Dec 2019}
+\resumeItemListStart
+Led efforts to streamline the compilation and build processes of the project, focusing on CMAKE/Make configuration. \\
+Contributed to the core development by creating a blockchain application for downloading and managing transactions, addressing errors, and enhancing project capabilities across various Linux operating systems and distributions. \\
+Learn more about Ombre Currency at \url{https://github.com/ombre-project/ombre}.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Ryo Currency}{Remote}
+{Software Engineer}{Oct 2019 - Dec 2019}
+\resumeItemListStart
+Spearheaded efforts to implement a Twitter bot aimed at executing various missions, showcasing proficiency in Python programming.\\
+Contributed significantly to the engineering team by leveraging expertise in mathematics and cryptography to enhance and optimize the implementation of cryptocurrency algorithms in C and C++.\\
+Demonstrated exceptional skills in algorithmic design and optimization, particularly in algorithms such as Blake256, Groestl, Jh, Keccak, and Skein.\\
+Played a crucial role in elevating the speed and quality of Ryo Currency, thereby contributing to its success in the cryptocurrency market.\\
+Learn more about Ryo Currency at https://ryo-currency.com/.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading{Sumo Currency}{Remote}
+{Software Engineer}{Mar 2017 - Jul 2017}
+\resumeItemListStart
+Held a pivotal role within the engineering team, focusing on the implementation and optimization of cryptocurrency algorithms in C++.\
+Leveraged profound knowledge in mathematics and cryptography acquired from educational background in mathematics to refine and optimize algorithms such as Blake256, Groestl, Jh, Keccak, and Skein.\\
+Significantly contributed to the success of Sumo Currency by enhancing its speed and quality, thereby solidifying its position in the cryptocurrency market.\\
+Learn more about Sumo Currency at https://www.sumokoin.org/.
+\resumeItemListEnd
+
+\vspace{-1mm}
+\resumeSubheading
+{Freelancer}{Location}
+{Programmer and Freelancer}{May 2013 - May 2020}
+\resumeItemListStart
+Programming (from HTML to system programming)\\
+HTML, CSS, Python, PHP, C, C\#, Windows Forms, WPF, JavaScript, XML, Android (Java), FreeBSD, GNU/Linux, NoSQL Database, etc.
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-6.5mm}	
+\section{\textbf{Some public projects}}
+
+\textbf{One Language}: One (onelang) is an open-source system programming language that makes it easy to build reliable, efficient, and performant software. https://github.com/One-Language\\
+
+\textbf{Salam Language}: Salam Language, inspired by the Persian and Arabic roots of the word "salam," which means "peace," is a programming language crafted for simplicity and accessibility within the Iranian and Arabic-speaking communities. https://github.com/SalamLang\\
+
+\textbf{ET Language}: ET is a versatile, multi-language programming platform. It offers simplicity, speed, and safety, serving as a compiled language that seamlessly generates human-readable C code. https://github.com/et-lang\\
+
+\textbf{\href{https://basemax.github.io/MyMoDocs/}{OneLife PHP Framework}} - Build your next website and web-based project or API design with the OneLife framework. It's a simple, fast, and powerful framework for building web applications with PHP 8.1.
+
+\textbf{\href{https://github.com/DonyaOS/}{Donya OS}} - Donya is an Operating system. Yet Another Linux distro built using a package management system.
+
+\textbf{\href{https://phpmussel.github.io/}{PHP Mussel}} - An ideal solution for shared hosting environments, where it's often not possible to utilise or install conventional anti-virus protection solutions, phpMussel is a PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your system wherever the script is hooked, based on the signatures of ClamAV and others.
+
+\textbf{\href{https://opensourcefriday.com/}{Open Source Friday}} - This Friday, invest a few hours contributing to the software you use and love.
+
+% \textbf{\href{https://en.iapk.org/}{iAPK}} - Android Application Market with 7 different languages. (French, Swedish, English, Persian, etc)
+
+% \textbf{\href{https://sarrafchi.ir/}{Sarrafchi}} - A free website to get live currency rates in Free Market.
+
+% \textbf{\href{https://yefilm.ir/}{Ye Film}} - A free website to download movies and animations.
+
+% \textbf{\href{https://udate.ir/}{UDate}} - A free website to see Persian calendar to see days and occasions of the year and month (Convert date to each other)
+
+\textbf{\href{https://karamo.ir/}{Karamo}} - The largest job marketplace in Iran, with nearly 20,000 open job positions.
+
+\textbf{\href{https://music-best.ir/}{Music Best}} - A music marketplace featuring over 10,000 Iranian/Persian songs.
+
+\textbf{\href{https://hi2.in/}{Hi 2}} - Fake email is a good solution for temporary mail that does not require a password and works like a regular email. The main purpose of fake mail is to protect you from spam and internet scammers. Never use your real email on suspicious sites.
+
+\textbf{\href{https://apkdl.net/}{APK DL}} - Ultimate place to download up-to-date version of android apps and games even those are restricted to specific device or country.
+
+\textbf{Telegram Bots:}\\
+\begin{adjustwidth}{0.5cm}{0cm}
+	\textbf{\href{https://t.me/apkdl_bot}{@Apkdl\_Bot}}: Download latest version of any free android apps and games.\\
+	
+	\textbf{\href{https://t.me/FakeMailBot}{@FakeMailBot}}: Free Fake Email IDs for everyone. Create hundreds of email address and receive unlimited mails everything under 1 second. This bot will forward all the emails to you as soon as it arrives you can also reply to any email you receive.\\
+	
+	\textbf{\href{https://t.me/DownloadStickersBot}{@DownloadStickersBot}}: Download your favourite stickers in jpg,png,webp formats or whole pack as zip file.\\
+	
+	\textbf{\href{https://t.me/uploadbot}{@UploadBot}}: This bot help you to quickly upload files from URL to Telegram. Quick way to upload files to telegram by url.\\
+	
+	\textbf{\href{https://t.me/mp3toolsbot}{@Mp3ToolsBot}}: Convert any MP3 into voice message, add/edit MP3 tags, cut MP3 based on start and end points in seconds, add album art.\\
+	
+	\textbf{\href{https://t.me/utuberabot}{@UtuberaBot}}: I am the Best Youtube Video Downloader with MP3 Conversion support.\\
+	
+	\textbf{\href{https://t.me/file2link_bot}{@File2Link\_Bot}}: get download link for any telegram file, size limit is 20MB.\\
+	
+	\textbf{\href{https://t.me/getpubliclinkbot}{@GetPublicLinkBot}}: Just Send Me any Document File of any SIZE i will Generate a External Link.
+\end{adjustwidth}
+
+I have over 1,000 projects and repositories on my GitHub profile. Feel free to explore and find any projects you have in mind. Most of them are public and available for you to check and review at http://github.com/BaseMax.
+
+\section{\textbf{Education}}
+
+\textbf{Research Assistant}: University of Kashan\\
+\textbf{Pure Mathematics}: University of Kashan\\
+\textbf{Computer Science}: University of Kashan\\
+
+
+\section{\textbf{Books}}
+\textbf{Research on Teaching and Learning Probability}\\Language: Persian, Length: 50 pages\\
+
+
+\textbf{Probability and Simulation}\\
+Language: Persian, Length: 150 pages\\
+
+
+\textbf{GAP — A Tutorial}\\
+Language: Persian, Length: 80 pages\\
+
+
+\textbf{Computer Algebra with GAP}\\
+Language: Persian, Length: 160 pages\\
+
+
+\textbf{An Introduction to Stochastic Differential Equations}\\
+Language: Persian, Length: 150 pages\\
+
+
+\textbf{The Foundations of Statistics: A Simulation-based Approach}\\
+Language: Persian, Length: 160 pages\\
+
+
+\textbf{A GAP Tutorial for Transformational Music Theory}\\
+Language: Persian, Length: 40 pages\\
+
+\textbf{Basics of Matrix Algebra for Statistics with R}\\
+Language: Persian, Length: 220 pages\\
+
+
+\textbf{Philosophy of Probability and Statistical Modelling}\\
+Language: Persian, Length: 70 pages\\
+
+
+
+\section{\textbf{Visited Countries}}
+
+Iran, Sweden, Estonia, Germany, Belgium, France, Netherlands, Italy, Turkey, United Arab Emirates, Qatar, etc.
+
+\section{\textbf{University visited and gave course/talks}}
+Italy, University of Salerno\\
+Italy, University of Florence\\
+Italy, University of Milano-Bicocca\\
+Italy, University of Milan\\
+Italy, Sapienza University of Rome\\
+Sweden, KTH Royal Institute of Technology\\
+Belgium, Ghent University\\
+Sweden, Stockholm University\\
+Sweden, Linköping University\\
+Iran, University of Kashan\\
+Iran, Tarbiat Modares University\\
+etc.
+%	\section{\textbf{Journal Papers}}
+
+%		TBC...
+
+
+\section{\textbf{Conferences}}
+\textbf{February 2024: Global Summit for Node.js'24}\\
+“Jest Essentials: Elevating Test Coverage in Node.js Applications”\\
+\textbf{February 2024: ONLINE SUMMIT FOR JAVA DEVS'24}\\
+“Swagger and Java: Building Comprehensive API Documentation”\\
+\textbf{September 2023: JavaScript Global Summit’23 - Online}\\
+“Building a WebSocket Server and Client: Live Coding with Node.js and JavaScript”\\
+\textbf{July 2023: AI in Software Development Conf’23 - Online}\\
+“Supercharge Your Database Queries: How Outsourced SQL Services Can Optimize Development Workflows”\\
+\textbf{June 2023: VUE.JS Global Summit’23 - Online}\\
+“Simplifying vue. Js testing with browser-based automated testing scripts”\\
+\textbf{May 2023: TypeScript Global Summit’23 - Online}\\
+“Designing an Entertaining Game with Typescript: A Hands-On Approach”\\
+\textbf{January 2023: Global Summit for NodeJS 2023 - Online}\\
+“How NPM or Yarn are working; Going to create our own package manager”\\
+\textbf{March 2023: 1st International Workshop on Pure and Applied Mathematics - Online}\\
+“The Art of Graph Visualization: A Hands-On Introduction to NetworkX and Matplotlib in Python” - University of Kufe\\
+\textbf{March 2023: 1st International Workshop on Pure and Applied Mathematics - Online}\\
+“A Simple Hash Function for Various Computer Applications” - University of Kufe\\
+\textbf{November 2022: Data Science Global Summit’22.2 - Online}\\
+“Real-life use case on NumPy; A tool that Every Data Scientist Needs to Master”\\
+\textbf{November 2022: React Global Online Summit 22.2 - Online}\\
+“GitHub Actions for auto-deploying React Web apps”\\
+\textbf{October 2022: DevOps Global Summit - Wilmington, USA}\\
+“From Zero-To-Hero in GitHub Actions”\\
+\textbf{November 2022: 7th International Conference on Combinatorics, Cryptography, Computer Science and Computation}\\
+“Identifying the publisher of administrative documents using watermarking algorithms”\\
+\textbf{November 2022: 7th International Conference on Combinatorics, Cryptography, Computer Science and Computation}\\
+“A software package for Latin squares and their count”\\
+\textbf{October 2022: The 5th Mediterranean International Conference of Pure \& Applied Mathematics and Related Areas}\\
+“FastCombPerm: A Fast Package For Creating Combinations and Permutations With And Without Repetition”\\
+\textbf{July 2022: Algorithmic and Enumerative Combinatorics 2022 - University of Vienna, Vienna, Austria}\\
+“A Novel Image Encryption Algorithm Based On Latin And Magic Square”\\
+\textbf{July 2022: Group Theory in Florence III - University of Florence, Florence, Italy}\\
+“An Algorithm for Computing Symmetry of Molecular Graphs”\\
+\textbf{June 2022: Groups \& Algebras in Bicocca for Young algebraists - University of Milano-Bicocca, Milan, Italy}\\
+“Gyrogroups of Small Orders”\\
+\textbf{June 2022: Ischia Group Theory 2022 - Ischia Island, Naples, Italy}\\
+“Computing Markaracter Table of Finite Groups”\\
+\textbf{Sep 2021: Meeting Baz - Online (COVID)}\\
+“Introduction to Ruby language”\\
+\textbf{Jan 2021: Meeting Baz - Online (COVID)}\\
+“Take a Deep Look at JIT Compilers”\\
+\textbf{Jan 2020: 12th Iranian International Group Theory Conference - Online (COVID)}\\
+“GAP (Group Algorithm Programming)”\\
+\textbf{Feb 2020 12th Iranian Group Theory Conference - Tehran, Iran}\\
+“GAP (Group Algorithm Programming)”\\
+\textbf{Jan 2019: International GAP workshop - Tehran, Iran}\\
+Introduction to GAP System and its Application on group theory (Dihedral group, Monster group, etc)”\\
+\textbf{May 2019: Computer and Informatics Department, University of Kashan - Kashan, Iran}\\
+“Introduction to ‘ONE Programming language’ and why my compiler?”\\
+
+Please request an updated list of my talks and lectures.
+
+\section{\textbf{Research Papers}}
+\textbf{June 2023: 10th International Congress on Fundamental and Applied Sciences 2023 - In-Person}\\
+“Using Mathematical Methods to Improve the Safety and Efficacy of Chemicals and Pharmaceuticals”\\
+\textbf{May 2023: E-Commerce Tech Online Summit’23 - Online}\\
+“The Power of AI and ML in E-commerce: Crafting Personalized Shopping Experiences and Boosting Sales with Recommendation Systems”\\
+\textbf{May 2023: 6th International HYBRID Conference on Mathematical Advances and Applications - In-Person}\\
+“Applied Mathematical Physics: Solving Real-World Problems”\\
+\textbf{May 2023: 6th International HYBRID Conference on Mathematical Advances and Applications - In-Person}\\
+“Probability in Mathematical Physics: Theory and Applications”\\
+\textbf{March 2023: 1st International Conference on Statistical Data Analysis - Online}\\
+“Data Analytics in the 21st Century: The Importance of Statistical Data Analysis”\\
+
+Please request an updated list of my research papers.
+
+%-----------PROJECTS-----------------
+%	\section{\textbf{References}}
+
+%	\textbf{Prof. Alireza Ashrafi:} Full Professor of Department of Pure Mathematics at University of Kashan\\
+%	\textbf{Dr. Hassan Daghigh:} Head of Mathematics Faculty, and Associate Professor at University of Kashan\\
+%	\textbf{Dr. Mojtaba Bahramian:} Assistant Professor of Department of Pure Mathematics at University of Kashan\\
+%	\textbf{Dr. Reza Kahkeshani:} Assistant Professor of Department of Pure Mathematics at University of Kashan\\
+%	\textbf{Dr. Mahdi Sabzevari:} Assistant Professor of Department of Applied Mathematics at University of Kashan\\
+%	\textbf{Eng. Ahmad Yoosofan:} Lecturer of Department of Computer Engineering at University of Kashan\\
+%	\textbf{Eng. John Bampton:} Developer Relations Engineer, Team Leader - Committer of Apache Software Foundation\\
+%	\textbf{Eng. Diyar Parw:} Scandinavian transport Network\\
+
+\end{document}
