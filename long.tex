@@ -1,3 +1,32 @@
+%-------------------------
+% Resume in Latex
+% Author : Puneet Gautam, puneet.gautam0206@gmail.com, punitrajgautam@uiit.ac.in
+% License : MIT
+%MIT License
+
+%Copyright (c) 2023 Puneet Gautam
+
+%Permission is hereby granted, free of charge, to any person obtaining a copy
+%of this software and associated documentation files (the "Software"), to deal
+%in the Software without restriction, including without limitation the rights
+%to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%copies of the Software, and to permit persons to whom the Software is
+%furnished to do so, subject to the following conditions:
+
+%The above copyright notice and this permission notice shall be included in all
+%copies or substantial portions of the Software.
+
+%THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+%SOFTWARE.
+%------------------------
+
+%---- Required Packages and Functions ----
+
 \documentclass[a4paper,10pt]{article}
 \usepackage{latexsym}
 \usepackage{xcolor}
@@ -22,11 +51,15 @@
 \usepackage[T1]{fontenc}
 \setlength{\multicolsep}{0pt} 
 \pagestyle{fancy}
-\fancyhf{}
+\fancyhf{} % clear all header and footer fields
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \geometry{left=0.6cm, top=0.5cm, right=0.6cm, bottom=0.5cm}
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
 \usepackage[most]{tcolorbox}
 \tcbset{
 	frame code={}
@@ -48,10 +81,13 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
+% Sections formatting
 \titleformat{\section}{
 	\vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
 
+%-------------------------
+% Custom commands
 \newcommand{\resumeItem}[2]{
 	\item{
 		\textbf{#1}{:\hspace{0.5mm}#2 \vspace{-0.5mm}}
@@ -86,6 +122,7 @@
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
+% \renewcommand{\labelitemii}{$\circ$}
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
@@ -106,36 +143,46 @@
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}%
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
 \newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
 
 %-------------------------------------------
-\newcommand{\name}{Seyyed Ali Mohammadiyeh}
-\newcommand{\course}{Senior Software Engineer - Developer}
-\newcommand{\roll}{Software Engineer}
-\newcommand{\phone}{+98 913 495 0787}
-\newcommand{\emaila}{maxbasecode@gmail.com}
-\newcommand{\emailb}{maxbasecode@gmail.com}
-\newcommand{\github}{BaseMax}
-\newcommand{\website}{https://mohammadiyeh.org}
-\newcommand{\linkedin}{maxbase}
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+%\newcommand{\name}{Max Base (Seyyed Ali Mohammadiyeh)} % Your Name
+\newcommand{\name}{Seyyed Ali Mohammadiyeh} % Your Name
+\newcommand{\course}{Senior Software Engineer - Developer} % Your Course
+\newcommand{\roll}{Software Engineer} % Your Roll No.
+\newcommand{\phone}{+98 913 495 0787 (Call), +46 72 025 2169 (Telegram), +32 470115112 (Call)}%+98 913 495 0787, +46 762704443} % Your Phone Number
+\newcommand{\emaila}{maxbasecode@gmail.com} %Email 1
+\newcommand{\emailb}{maxbasecode@gmail.com} %Email 2
+\newcommand{\github}{BaseMax} %Github
+\newcommand{\website}{https://maxbase.org} %Website
+\newcommand{\linkedin}{maxbase} %linkedin
 
 \begin{document}
 \fontfamily{cmr}\selectfont
 %----------HEADING-----------------
+
+%\parbox{2.35cm}{%
+	%\includegraphics[width=2cm,clip]{GGSIU_logo.png}
+	%}\parbox{\dimexpr\linewidth-2.8cm\relax}
+%{
 	\begin{tabularx}{\linewidth}{L r}
 		\textbf{\LARGE \name} & \phone\\
 		
 		\course &  \href{mailto:\emailb}{\emailb}\\
-		\href{https://github.com/\github}{GitHub} \\
+		{Iranian and Residency in Iran and Estonia (Sep 2023 - Sep 2028)} &  \href{https://github.com/\github}{GitHub} \\ %$|$ \href{\website}{Website}\\
 		{Location: Kashan, I.R. Iran} & \href{https://www.linkedin.com/in/\linkedin/}{LinkedIn}
 	\end{tabularx}
 	%}
 
 \vspace{-2mm}
 
+
 %-------------SUMMARY-----------------
 \iffalse
 \section{\textbf{Summary}}
-py python3 html5 html css3 css python compiler programming developer developing test
+compiler programming developer developing test
 go golang go language c# .net asp.net dotnet
 typescript javascript react reactjs
 js ts
@@ -379,6 +426,11 @@ Thrived in a remote work environment, collaborating effectively with a diverse t
 This experience not only honed my problem-solving skills but also kept me abreast of industry trends, enabling me to make a substantial impact in software development within the automotive sector.
 \resumeItemListEnd
 
+% \vspace{-1mm}
+% \resumeSubheading
+% {One Programming Language}{Location}
+% {Founder and Creator}{Jan 2016 - Present}
+
 \vspace{-1mm}
 \resumeSubheading
 {Mirese}{Iran}
@@ -483,6 +535,60 @@ HTML, CSS, Python, PHP, C, C\#, Windows Forms, WPF, JavaScript, XML, Android (Ja
 
 \resumeSubHeadingListEnd
 
+\vspace{-6.5mm}	
+\section{\textbf{Some public projects}}
+
+\textbf{One Language}: One (onelang) is an open-source system programming language that makes it easy to build reliable, efficient, and performant software. https://github.com/One-Language\\
+
+\textbf{Salam Language}: Salam Language, inspired by the Persian and Arabic roots of the word "salam," which means "peace," is a programming language crafted for simplicity and accessibility within the Iranian and Arabic-speaking communities. https://github.com/SalamLang\\
+
+\textbf{ET Language}: ET is a versatile, multi-language programming platform. It offers simplicity, speed, and safety, serving as a compiled language that seamlessly generates human-readable C code. https://github.com/et-lang\\
+
+\textbf{\href{https://basemax.github.io/MyMoDocs/}{OneLife PHP Framework}} - Build your next website and web-based project or API design with the OneLife framework. It's a simple, fast, and powerful framework for building web applications with PHP 8.1.
+
+\textbf{\href{https://github.com/DonyaOS/}{Donya OS}} - Donya is an Operating system. Yet Another Linux distro built using a package management system.
+
+\textbf{\href{https://phpmussel.github.io/}{PHP Mussel}} - An ideal solution for shared hosting environments, where it's often not possible to utilise or install conventional anti-virus protection solutions, phpMussel is a PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your system wherever the script is hooked, based on the signatures of ClamAV and others.
+
+\textbf{\href{https://opensourcefriday.com/}{Open Source Friday}} - This Friday, invest a few hours contributing to the software you use and love.
+
+% \textbf{\href{https://en.iapk.org/}{iAPK}} - Android Application Market with 7 different languages. (French, Swedish, English, Persian, etc)
+
+% \textbf{\href{https://sarrafchi.ir/}{Sarrafchi}} - A free website to get live currency rates in Free Market.
+
+% \textbf{\href{https://yefilm.ir/}{Ye Film}} - A free website to download movies and animations.
+
+% \textbf{\href{https://udate.ir/}{UDate}} - A free website to see Persian calendar to see days and occasions of the year and month (Convert date to each other)
+
+\textbf{\href{https://karamo.ir/}{Karamo}} - The largest job marketplace in Iran, with nearly 20,000 open job positions.
+
+\textbf{\href{https://music-best.ir/}{Music Best}} - A music marketplace featuring over 10,000 Iranian/Persian songs.
+
+\textbf{\href{https://hi2.in/}{Hi 2}} - Fake email is a good solution for temporary mail that does not require a password and works like a regular email. The main purpose of fake mail is to protect you from spam and internet scammers. Never use your real email on suspicious sites.
+
+\textbf{\href{https://apkdl.net/}{APK DL}} - Ultimate place to download up-to-date version of android apps and games even those are restricted to specific device or country.
+
+\textbf{Telegram Bots:}\\
+\begin{adjustwidth}{0.5cm}{0cm}
+	\textbf{\href{https://t.me/apkdl_bot}{@Apkdl\_Bot}}: Download latest version of any free android apps and games.\\
+	
+	\textbf{\href{https://t.me/FakeMailBot}{@FakeMailBot}}: Free Fake Email IDs for everyone. Create hundreds of email address and receive unlimited mails everything under 1 second. This bot will forward all the emails to you as soon as it arrives you can also reply to any email you receive.\\
+	
+	\textbf{\href{https://t.me/DownloadStickersBot}{@DownloadStickersBot}}: Download your favourite stickers in jpg,png,webp formats or whole pack as zip file.\\
+	
+	\textbf{\href{https://t.me/uploadbot}{@UploadBot}}: This bot help you to quickly upload files from URL to Telegram. Quick way to upload files to telegram by url.\\
+	
+	\textbf{\href{https://t.me/mp3toolsbot}{@Mp3ToolsBot}}: Convert any MP3 into voice message, add/edit MP3 tags, cut MP3 based on start and end points in seconds, add album art.\\
+	
+	\textbf{\href{https://t.me/utuberabot}{@UtuberaBot}}: I am the Best Youtube Video Downloader with MP3 Conversion support.\\
+	
+	\textbf{\href{https://t.me/file2link_bot}{@File2Link\_Bot}}: get download link for any telegram file, size limit is 20MB.\\
+	
+	\textbf{\href{https://t.me/getpubliclinkbot}{@GetPublicLinkBot}}: Just Send Me any Document File of any SIZE i will Generate a External Link.
+\end{adjustwidth}
+
+I have up to 2,000 projects and repositories on my GitHub profile. Feel free to explore and find any projects you have in mind. Most of them are public and available for you to check and review at http://github.com/BaseMax.
+
 \section{\textbf{Education}}
 
 \textbf{Research Assistant}: University of Kashan\\
@@ -492,5 +598,148 @@ HTML, CSS, Python, PHP, C, C\#, Windows Forms, WPF, JavaScript, XML, Android (Ja
 \textbf{Bachelor in Statistics and Its Applications}: University of Kashan\\
 \textbf{Bachelor in Pure and Applied Mathematics}: University of Kashan\\
 \textbf{Bachelor in Computer Science}: University of Kashan\\
+
+\section{\textbf{Books}}
+
+\textbf{Research on Teaching and Learning Probability}\\
+Language: Persian, Length: 50 pages\\
+
+\textbf{Probability and Simulation}\\
+Language: Persian, Length: 150 pages\\
+
+\textbf{GAP — A Tutorial}\\
+Language: Persian, Length: 80 pages\\
+
+\textbf{Computer Algebra with GAP}\\
+Language: Persian, Length: 160 pages\\
+
+\textbf{An Introduction to Stochastic Differential Equations}\\
+Language: Persian, Length: 150 pages\\
+
+\textbf{The Foundations of Statistics: A Simulation-based Approach}\\
+Language: Persian, Length: 160 pages\\
+
+\textbf{A GAP Tutorial for Transformational Music Theory}\\
+Language: Persian, Length: 40 pages\\
+
+\textbf{Basics of Matrix Algebra for Statistics with R}\\
+Language: Persian, Length: 220 pages\\
+
+\textbf{Philosophy of Probability and Statistical Modelling}\\
+Language: Persian, Length: 70 pages\\
+
+\textbf{What Is Generative AI?}\\
+Language: Persian, Length: 48 pages\\
+
+\textbf{Integrating AI into Business Processes}\\
+Language: Persian, Length: 74 pages\\
+
+\textbf{What Are AI Agents?}\\
+Language: Persian, Length: 53 pages\\
+
+\section{\textbf{Visited Countries}}
+
+Belgium, Estonia, France, Germany, Iran, Iraq, Italy, Japan, Latvia, Netherlands, Portugal, Qatar, Spain, Sweden, Turkey, United Arab Emirates, etc.
+
+\section{\textbf{University visited and gave course/talks}}
+Belgium, Ghent University\\
+Belgium, Vrije Universiteit Brussel\\
+Sweden, KTH Royal Institute of Technology\\
+Sweden, Stockholm University\\
+Sweden, Linköping University\\
+Austria, University of Vienna\\
+Italy, University of Salerno\\
+Italy, University of Florence\\
+Italy, University of Milano-Bicocca\\
+Italy, University of Milan\\
+Italy, Sapienza University of Rome\\
+Iran, University of Kashan\\
+Iran, Tarbiat Modares University\\
+Iraq, University of Kufa\\
+etc.
+%	\section{\textbf{Journal Papers}}
+
+%		TBC...
+
+
+\section{\textbf{Conferences}}
+\textbf{February 2024: Global Summit for Node.js'24}\\
+“Jest Essentials: Elevating Test Coverage in Node.js Applications”\\
+\textbf{February 2024: ONLINE SUMMIT FOR JAVA DEVS'24}\\
+“Swagger and Java: Building Comprehensive API Documentation”\\
+\textbf{September 2023: JavaScript Global Summit’23 - Online}\\
+“Building a WebSocket Server and Client: Live Coding with Node.js and JavaScript”\\
+\textbf{July 2023: AI in Software Development Conf’23 - Online}\\
+“Supercharge Your Database Queries: How Outsourced SQL Services Can Optimize Development Workflows”\\
+\textbf{June 2023: VUE.JS Global Summit’23 - Online}\\
+“Simplifying vue. Js testing with browser-based automated testing scripts”\\
+\textbf{May 2023: TypeScript Global Summit’23 - Online}\\
+“Designing an Entertaining Game with Typescript: A Hands-On Approach”\\
+\textbf{January 2023: Global Summit for NodeJS 2023 - Online}\\
+“How NPM or Yarn are working; Going to create our own package manager”\\
+\textbf{March 2023: 1st International Workshop on Pure and Applied Mathematics - Online}\\
+“The Art of Graph Visualization: A Hands-On Introduction to NetworkX and Matplotlib in Python” - University of Kufe\\
+\textbf{March 2023: 1st International Workshop on Pure and Applied Mathematics - Online}\\
+“A Simple Hash Function for Various Computer Applications” - University of Kufe\\
+\textbf{November 2022: Data Science Global Summit’22.2 - Online}\\
+“Real-life use case on NumPy; A tool that Every Data Scientist Needs to Master”\\
+\textbf{November 2022: React Global Online Summit 22.2 - Online}\\
+“GitHub Actions for auto-deploying React Web apps”\\
+\textbf{October 2022: DevOps Global Summit - Wilmington, USA}\\
+“From Zero-To-Hero in GitHub Actions”\\
+\textbf{November 2022: 7th International Conference on Combinatorics, Cryptography, Computer Science and Computation}\\
+“Identifying the publisher of administrative documents using watermarking algorithms”\\
+\textbf{November 2022: 7th International Conference on Combinatorics, Cryptography, Computer Science and Computation}\\
+“A software package for Latin squares and their count”\\
+\textbf{October 2022: The 5th Mediterranean International Conference of Pure \& Applied Mathematics and Related Areas}\\
+“FastCombPerm: A Fast Package For Creating Combinations and Permutations With And Without Repetition”\\
+\textbf{July 2022: Algorithmic and Enumerative Combinatorics 2022 - University of Vienna, Vienna, Austria}\\
+“A Novel Image Encryption Algorithm Based On Latin And Magic Square”\\
+\textbf{July 2022: Group Theory in Florence III - University of Florence, Florence, Italy}\\
+“An Algorithm for Computing Symmetry of Molecular Graphs”\\
+\textbf{June 2022: Groups \& Algebras in Bicocca for Young algebraists - University of Milano-Bicocca, Milan, Italy}\\
+“Gyrogroups of Small Orders”\\
+\textbf{June 2022: Ischia Group Theory 2022 - Ischia Island, Naples, Italy}\\
+“Computing Markaracter Table of Finite Groups”\\
+\textbf{Sep 2021: Meeting Baz - Online (COVID)}\\
+“Introduction to Ruby language”\\
+\textbf{Jan 2021: Meeting Baz - Online (COVID)}\\
+“Take a Deep Look at JIT Compilers”\\
+\textbf{Jan 2020: 12th Iranian International Group Theory Conference - Online (COVID)}\\
+“GAP (Group Algorithm Programming)”\\
+\textbf{Feb 2020 12th Iranian Group Theory Conference - Tehran, Iran}\\
+“GAP (Group Algorithm Programming)”\\
+\textbf{Jan 2019: International GAP workshop - Tehran, Iran}\\
+Introduction to GAP System and its Application on group theory (Dihedral group, Monster group, etc)”\\
+\textbf{May 2019: Computer and Informatics Department, University of Kashan - Kashan, Iran}\\
+“Introduction to ‘ONE Programming language’ and why my compiler?”\\
+
+Please request an updated list of my talks and lectures.
+
+\section{\textbf{Research Papers}}
+\textbf{June 2023: 10th International Congress on Fundamental and Applied Sciences 2023 - In-Person}\\
+“Using Mathematical Methods to Improve the Safety and Efficacy of Chemicals and Pharmaceuticals”\\
+\textbf{May 2023: E-Commerce Tech Online Summit’23 - Online}\\
+“The Power of AI and ML in E-commerce: Crafting Personalized Shopping Experiences and Boosting Sales with Recommendation Systems”\\
+\textbf{May 2023: 6th International HYBRID Conference on Mathematical Advances and Applications - In-Person}\\
+“Applied Mathematical Physics: Solving Real-World Problems”\\
+\textbf{May 2023: 6th International HYBRID Conference on Mathematical Advances and Applications - In-Person}\\
+“Probability in Mathematical Physics: Theory and Applications”\\
+\textbf{March 2023: 1st International Conference on Statistical Data Analysis - Online}\\
+“Data Analytics in the 21st Century: The Importance of Statistical Data Analysis”\\
+
+Please request an updated list of my research papers.
+
+%-----------PROJECTS-----------------
+\section{\textbf{References}}
+
+\textbf{Prof. Alireza Ashrafi:} Full Professor of Department of Pure Mathematics at University of Kashan\\
+\textbf{Dr. Hassan Daghigh:} Head of Mathematics Faculty, and Associate Professor at University of Kashan\\
+\textbf{Dr. Mojtaba Bahramian:} Assistant Professor of Department of Pure Mathematics at University of Kashan\\
+\textbf{Dr. Reza Kahkeshani:} Assistant Professor of Department of Pure Mathematics at University of Kashan\\
+\textbf{Dr. Mahdi Sabzevari:} Assistant Professor of Department of Applied Mathematics at University of Kashan\\
+\textbf{Eng. Ahmad Yoosofan:} Lecturer of Department of Computer Engineering at University of Kashan\\
+\textbf{Eng. John Bampton:} Developer Relations Engineer, Team Leader - Committer of Apache Software Foundation\\
+\textbf{Eng. Diyar Parw:} Scandinavian transport Network\\
 
 \end{document}
