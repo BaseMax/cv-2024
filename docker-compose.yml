@@ -1,0 +1,8 @@
+services:
+  latex:
+    build: .
+    container_name: latex-builder
+    working_dir: /data
+    volumes:
+      - ./:/data
+    command: latexmk -pdf -interaction=nonstopmode -halt-on-error cv.tex
