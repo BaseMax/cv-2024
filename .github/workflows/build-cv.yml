@@ -36,7 +36,7 @@ jobs:
 
       - name: Build PDF
         run: |
-          latexmk -pdf -interaction=nonstopmode -halt-on-error cv.tex
+          latexmk -pdf -interaction=nonstopmode -halt-on-error long.tex
 
       - name: Check PDF exists
         run: |
