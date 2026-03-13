@@ -13,11 +13,11 @@ on:
     inputs:
       tex_file:
         description: "Tex file to compile"
-        default: "cv.tex"
+        default: "long.tex"
         required: true
       output_name:
         description: "Output PDF name"
-        default: "cv.pdf"
+        default: "long.pdf"
         required: true
   release:
     types: [created]
@@ -55,31 +55,29 @@ jobs:
 
       - name: Build PDF
         run: |
-          latexmk -pdf -interaction=nonstopmode -halt-on-error $TEX_FILE
-
-      - name: Rename PDF
-        run: |
-          GENERATED=$(basename "$TEX_FILE" .tex).pdf
-          if [ "$GENERATED" != "$OUTPUT_NAME" ]; then
-            mv "$GENERATED" "$OUTPUT_NAME"
-          else
-            echo "Output filename already correct: $OUTPUT_NAME"
-          fi
+          latexmk -pdf -interaction=nonstopmode -halt-on-error \
+            -jobname=$(basename "${OUTPUT_NAME}" .pdf) \
+            "${TEX_FILE}"
 
       - name: Check PDF exists
         run: |
-          test -f $OUTPUT_NAME || (echo "PDF not generated!" && exit 1)
+          test -f "${OUTPUT_NAME}" || (echo "PDF not generated!" && exit 1)
+
+      - name: Debug files
+        run: |
+          ls -lah
+          echo "Expected file: ${OUTPUT_NAME}"
 
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
         with:
           name: CV-PDF
-          path: $OUTPUT_NAME
+          path: ${{ env.OUTPUT_NAME }}
 
       - name: Upload PDF to Release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
-          files: $OUTPUT_NAME
+          files: ${{ env.OUTPUT_NAME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
