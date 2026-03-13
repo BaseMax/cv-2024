@@ -10,8 +10,21 @@ on:
     paths:
       - "**.tex"
   workflow_dispatch:
+    inputs:
+      tex_file:
+        description: "Tex file to compile"
+        default: "cv.tex"
+        required: true
+      output_name:
+        description: "Output PDF name"
+        default: "cv.pdf"
+        required: true
   release:
     types: [created]
+
+env:
+  TEX_FILE: long.tex
+  OUTPUT_NAME: long.pdf
 
 jobs:
   build:
@@ -20,6 +33,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Override vars if workflow_dispatch
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "TEX_FILE=${{ github.event.inputs.tex_file }}" >> $GITHUB_ENV
+          echo "OUTPUT_NAME=${{ github.event.inputs.output_name }}" >> $GITHUB_ENV
 
       - name: Cache TeXLive
         uses: actions/cache@v4
@@ -36,22 +55,27 @@ jobs:
 
       - name: Build PDF
         run: |
-          latexmk -pdf -interaction=nonstopmode -halt-on-error long.tex
+          latexmk -pdf -interaction=nonstopmode -halt-on-error $TEX_FILE
+
+      - name: Rename PDF
+        run: |
+          GENERATED=$(basename $TEX_FILE .tex).pdf
+          mv $GENERATED $OUTPUT_NAME
 
       - name: Check PDF exists
         run: |
-          test -f cv.pdf || (echo "PDF not generated!" && exit 1)
+          test -f $OUTPUT_NAME || (echo "PDF not generated!" && exit 1)
 
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
         with:
           name: CV-PDF
-          path: cv.pdf
+          path: $OUTPUT_NAME
 
       - name: Upload PDF to Release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
-          files: cv.pdf
+          files: $OUTPUT_NAME
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
