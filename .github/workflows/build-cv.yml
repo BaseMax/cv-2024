@@ -59,8 +59,12 @@ jobs:
 
       - name: Rename PDF
         run: |
-          GENERATED=$(basename $TEX_FILE .tex).pdf
-          mv $GENERATED $OUTPUT_NAME
+          GENERATED=$(basename "$TEX_FILE" .tex).pdf
+          if [ "$GENERATED" != "$OUTPUT_NAME" ]; then
+            mv "$GENERATED" "$OUTPUT_NAME"
+          else
+            echo "Output filename already correct: $OUTPUT_NAME"
+          fi
 
       - name: Check PDF exists
         run: |
